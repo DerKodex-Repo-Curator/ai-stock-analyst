@@ -279,6 +279,9 @@ This demo:
 For comprehensive ML validation with GPU-accelerated models:
 
 ```bash
+# Navigate to src directory first
+cd src
+
 # Basic validation run
 python -m cli.ml_validator --tickers AAPL MSFT GOOGL
 
@@ -700,6 +703,9 @@ ai-stock-analyst/
 │   ├── test_api.py               # API unit tests
 │   ├── test_backtesting.py       # Backtesting tests
 │   └── test_ml.py                # ML pipeline tests
+├── docs/                         # Documentation guides
+│   ├── ML_MODULE_GUIDE.md        # ML module explanation
+│   └── STOCK_ANALYSIS_GUIDE.md   # Stock analysis guide
 ├── images/                       # Documentation images
 ├── .dockerignore                 # Docker ignore patterns
 ├── .env.example                  # Example environment configuration
@@ -738,3 +744,10 @@ pip install -r requirements.txt
 # Ensure you're in the project root directory
 streamlit run app/streamlit_app.py --server.port 8501
 ```
+
+## Documentation
+
+Additional guides are available in the `docs/` folder:
+
+- **[ML Module Guide](docs/ML_MODULE_GUIDE.md)** - A beginner-friendly explanation of how the Machine Learning module works, including feature engineering, ensemble models, tuning, and validation strategies.
+- **[Stock Analysis Guide](docs/STOCK_ANALYSIS_GUIDE.md)** - Comprehensive guide to the stock analysis workflow and agent interactions.

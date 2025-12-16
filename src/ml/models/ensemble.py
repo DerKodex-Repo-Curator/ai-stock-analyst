@@ -165,9 +165,17 @@ class EnsemblePredictor(BaseMLPredictor):
             return {}
 
         if self.model_type == "xgboost":
+            # use_gpu can be bool or int (device id). If bool, use device 0
+            device_id = (
+                self.config.use_gpu
+                if isinstance(self.config.use_gpu, int)
+                and not isinstance(self.config.use_gpu, bool)
+                else 0
+            )
+            # XGBoost 2.0+ uses device parameter with hist tree_method
             return {
-                "tree_method": "gpu_hist",
-                "device": f"cuda:{self.config.use_gpu if isinstance(self.config.use_gpu, int) else 0}",
+                "tree_method": "hist",
+                "device": f"cuda:{device_id}",
             }
         elif self.model_type == "lightgbm":
             return {

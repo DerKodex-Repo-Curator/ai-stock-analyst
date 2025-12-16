@@ -30,12 +30,11 @@ from ml.tuning.threshold import ThresholdOptimizer
 
 # Validation
 from ml.validation.cross_validation import (
-    TimeSeriesSplit,
+    TimeSeriesCV,
     PurgedKFold,
-    CombinatorialPurgedCV,
-    RegimeStratifiedCV,
-    CrossValidator,
-    cross_validate_model,
+    BlockingTimeSeriesCV,
+    MonteCarloCV,
+    CrossValidationResult,
 )
 from ml.validation.validation_metrics import (
     ValidationMetrics,
@@ -44,7 +43,6 @@ from ml.validation.validation_metrics import (
     calculate_confidence_metrics,
     calculate_trading_metrics,
     calculate_stability_metrics,
-    calculate_overfitting_score,
 )
 from ml.validation.reporter import ValidationReporter
 
@@ -63,12 +61,11 @@ __all__ = [
     "HyperparameterOptimizer",
     "ThresholdOptimizer",
     # Validation - CV strategies
-    "TimeSeriesSplit",
+    "TimeSeriesCV",
     "PurgedKFold",
-    "CombinatorialPurgedCV",
-    "RegimeStratifiedCV",
-    "CrossValidator",
-    "cross_validate_model",
+    "BlockingTimeSeriesCV",
+    "MonteCarloCV",
+    "CrossValidationResult",
     # Validation - Metrics
     "ValidationMetrics",
     "calculate_prediction_metrics",
@@ -76,7 +73,6 @@ __all__ = [
     "calculate_confidence_metrics",
     "calculate_trading_metrics",
     "calculate_stability_metrics",
-    "calculate_overfitting_score",
     # Validation - Reporter
     "ValidationReporter",
 ]

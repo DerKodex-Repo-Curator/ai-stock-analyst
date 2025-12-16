@@ -23,10 +23,9 @@ from src.backtesting.metrics import (
 from src.backtesting.position_manager import (
     PositionManager,
     SlippageModel,
-    ExecutionQuality,
+    ExecutionModel,
     TransactionCosts,
     ExecutionResult,
-    PositionSizeResult,
 )
 from src.backtesting.strategy import Strategy
 from src.backtesting.walk_forward import (
@@ -44,10 +43,9 @@ __all__ = [
     # Position Management
     "PositionManager",
     "SlippageModel",
-    "ExecutionQuality",
+    "ExecutionModel",
     "TransactionCosts",
     "ExecutionResult",
-    "PositionSizeResult",
     # Metrics
     "calculate_metrics",
     "calculate_benchmark_metrics",
